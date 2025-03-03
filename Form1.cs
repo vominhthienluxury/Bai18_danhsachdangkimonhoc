@@ -51,6 +51,25 @@ namespace Bai18_danhsachdangkimonhoc
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            cbxkhoa.Items.Add("2020");
+            cbxkhoa.Items.Add("2021");
+            cbxkhoa.Items.Add("2022");
+            cbxkhoa.Items.Add("2023");
+            cbxkhoa.Items.Add("2024");
+            cbxkhoa.Items.Add("2025");
+            cbxkhoa.SelectedIndex = 0;
+
+            cbxlop.Items.Add("Ứng dụng phần mềm 1");
+            cbxlop.Items.Add("Ứng dụng phần mềm 2");
+            cbxlop.Items.Add("Ứng dụng phần mềm 3");
+            cbxlop.Items.Add("Ứng dụng đồ họa 1");
+            cbxlop.Items.Add("Ứng dụng đồ họa 2");
+            cbxlop.Items.Add("Quản trị mạng 1");
+            cbxlop.Items.Add("Quản trị mạng 2");
+            cbxlop.SelectedIndex = 0;
+
+            khoaI.Checked = true;
+
             checkedListBox1.Items.Add("LT Windows");
             checkedListBox1.Items.Add("LT Internet");
             checkedListBox1.Items.Add("Mạng máy tính");
@@ -59,14 +78,37 @@ namespace Bai18_danhsachdangkimonhoc
 
         private void btnsign_Click(object sender, EventArgs e)
         {
-            string studentID = txtmssv.Text;
-            string fullName = txtname.Text;
-            string academicYear = cbxkhoa.SelectedItem?.ToString();
-            string className = cbxlop.Text;
-           
+            string thongtin;
+            thongtin = "Mã số sinh viên: " + txtmssv.Text;
+            thongtin += "\nHọ và tên: " + txtname.Text;
+            thongtin += "\nNiên khóa: " + cbxkhoa.SelectedItem;
+            thongtin += "\nLớp: " + cbxlop.SelectedItem;
 
-            string message = $"MSSV: {studentID}\nHọ và Tên: {fullName}\nNiên khóa: {academicYear}\nLớp: {className}\nHọc kỳ: {khoaI}\nMôn học: {checkedListBox1}";
-            MessageBox.Show(message, "Thông tin đăng ký", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            string hocky = "";
+            if (khoaI.Checked)
+            {
+                hocky = khoaI.Text;
+            }
+            else if (khoaII.Checked)
+            {
+                hocky = khoaII.Text;
+            }
+            else if (khoaIII.Checked)
+            {
+                hocky = khoaIII.Text;
+            }
+            else if (khoaIV.Checked)
+            {
+                hocky = khoaIV.Text;
+            }
+            thongtin += "\nĐã đăng ký học Học Kỳ " + hocky + " \ncác môn học sau:";
+            int stt = 1;
+            foreach (var item in checkedListBox1.CheckedItems)
+            {
+                thongtin += "\n" + stt + ". " + item.ToString();
+                stt++;
+            }
+            MessageBox.Show(thongtin, "Thông tin sinh viên");
         }
     }
 }

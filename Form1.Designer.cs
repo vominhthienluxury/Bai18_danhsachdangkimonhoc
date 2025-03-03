@@ -41,12 +41,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.btnclose = new System.Windows.Forms.Button();
             this.btnexit = new System.Windows.Forms.Button();
             this.btnsign = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -91,9 +91,14 @@
             // checkedListBox1
             // 
             this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Items.AddRange(new object[] {
+            "LT Windows",
+            "LT Internet",
+            "Mạng máy tính",
+            "UML"});
             this.checkedListBox1.Location = new System.Drawing.Point(190, 230);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(242, 94);
+            this.checkedListBox1.Size = new System.Drawing.Size(199, 64);
             this.checkedListBox1.TabIndex = 5;
             this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
@@ -169,16 +174,6 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Lớp";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(354, 20);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "label1";
-            this.label5.Click += new System.EventHandler(this.label3_Click);
-            // 
             // btnclose
             // 
             this.btnclose.Location = new System.Drawing.Point(279, 355);
@@ -228,6 +223,19 @@
             this.label7.Text = "Môn học";
             this.label7.Click += new System.EventHandler(this.label6_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label5.Location = new System.Drawing.Point(274, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(173, 25);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Đăng kí môn học";
+            this.label5.Click += new System.EventHandler(this.label3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -275,12 +283,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnclose;
         private System.Windows.Forms.Button btnexit;
         private System.Windows.Forms.Button btnsign;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label5;
     }
 }
 
